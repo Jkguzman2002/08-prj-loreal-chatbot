@@ -19,6 +19,124 @@
     />
     <link rel="stylesheet" href="style.css" />
     <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        background: #fff;
+      }
+      /* Hero banner styles */
+      .hero-banner {
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
+        height: 320px;
+        background: url("img/loreal-hero.jpeg") center center/cover no-repeat;
+        position: relative;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+        overflow: hidden;
+      }
+      .hero-banner::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.28);
+        pointer-events: none;
+        z-index: 1;
+      }
+      .hero-logo {
+        /* ...existing code... */
+        position: relative;
+        z-index: 2;
+      }
+      .hero-logo {
+        max-width: 240px;
+        width: 100%;
+        display: block;
+        margin: 80px auto 0 auto;
+        border-radius: 12px;
+        background: none;
+        padding: 0;
+        position: relative;
+        z-index: 2;
+        /* No glow or shadow */
+        box-shadow: none;
+      }
+      .page-wrapper {
+        margin: 0 auto;
+        max-width: 900px;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .site-header,
+      .chatbox,
+      .site-footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .chatbox {
+        width: calc(100vw - 32px);
+        max-width: 100vw;
+        margin-left: 16px;
+        margin-right: 16px;
+        box-sizing: border-box;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .chat-window {
+        width: 100%;
+        min-height: 360px;
+        padding: 32px 12px;
+        font-size: 20px;
+        line-height: 1.7;
+        overflow-y: auto;
+        background: #fafafa;
+        white-space: pre-line;
+        border: 1.5px solid #000;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+      .chat-form {
+        width: 100%;
+        display: flex;
+        gap: 12px;
+        margin-top: 16px;
+        padding-bottom: 8px;
+      }
+      .chat-form input {
+        font-size: 20px;
+        padding: 18px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+      }
+      .chat-form button {
+        height: 56px;
+        min-width: 56px;
+      }
+      /* Hide rings for now */
+      .ring {
+        display: none !important;
+      }
       .ring {
         position: absolute;
         stroke: url(#gold-gradient);
@@ -47,44 +165,13 @@
   </head>
 
   <body>
-    <!-- Decorative SVG golden rings background -->
-    <svg
-      width="100vw"
-      height="100vh"
-      style="position: fixed; top: 0; left: 0; z-index: 0; pointer-events: none"
-      viewBox="0 0 1000 1000"
-    >
-      <defs>
-        <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop
-            class="gold-gradient-animate"
-            offset="0%"
-            stop-color="#ffcc00"
-          />
-          <stop
-            class="gold-gradient-animate"
-            offset="100%"
-            stop-color="#d4af37"
-          />
-        </linearGradient>
-      </defs>
-      <!-- Top left corner -->
-      <circle class="ring" cx="60" cy="60" r="100" />
-      <!-- Top right corner -->
-      <circle class="ring" cx="1050" cy="-80" r="250" />
-      <!-- Bottom right corner -->
-      <circle class="ring" cx="1100" cy="1100" r="350" />
-    </svg>
-    <div class="page-wrapper" style="position: relative; z-index: 1">
+    <!-- Hero Banner at very top with logo at top center -->
+    <div class="hero-banner">
+      <img src="img/loreal-logo.png" alt="L'Oréal Logo" class="hero-logo" />
+    </div>
+    <div class="page-wrapper">
       <!------- Header / Branding ------->
       <header class="site-header">
-        <!-- L'Oréal logo at the top -->
-        <img
-          src="img/loreal-logo.png"
-          alt="L'Oréal Logo"
-          class="site-logo"
-          style="max-width: 180px; margin-bottom: 18px"
-        />
         <h1 class="site-title">Smart Product Advisor</h1>
       </header>
 
