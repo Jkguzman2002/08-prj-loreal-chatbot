@@ -18,6 +18,9 @@ let messages = [
 chatForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  // When using Cloudflare, you'll need to POST a `messages` array in the body,
+  // and handle the response using: data.choices[0].message.content
+
   // Get user's message from the input box
   const message = userInput.value.trim();
   if (!message) return;
