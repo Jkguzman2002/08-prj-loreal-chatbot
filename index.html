@@ -19,6 +19,27 @@
     />
     <link rel="stylesheet" href="style.css" />
     <style>
+      .gold-ring {
+        position: absolute;
+        width: 340px;
+        height: 340px;
+        z-index: 0;
+        opacity: 0.85;
+      }
+      .gold-ring.ring1 {
+        top: 0px;
+        left: 40px;
+      }
+      .gold-ring.ring2 {
+        bottom: -200px;
+        left: -140px;
+      }
+      .gold-ring.ring3 {
+        bottom: 100px;
+        right: 20px;
+      }
+    </style>
+    <style>
       body {
         min-height: 100vh;
         display: flex;
@@ -67,8 +88,7 @@
         background: none;
         padding: 0;
         position: relative;
-        z-index: 2;
-        /* No glow or shadow */
+        z-index: 3;
         box-shadow: none;
       }
       .page-wrapper {
@@ -136,6 +156,11 @@
   </head>
 
   <body>
+    <!-- Decorative gold rings -->
+    <img src="img/gold-ring.png" alt="Gold Ring" class="gold-ring ring1" />
+    <img src="img/gold-ring.png" alt="Gold Ring" class="gold-ring ring2" />
+    <img src="img/gold-ring.png" alt="Gold Ring" class="gold-ring ring3" />
+
     <!-- Hero Banner at very top with logo at top center -->
     <div class="hero-banner">
       <img src="img/loreal-logo.png" alt="L'Oréal Logo" class="hero-logo" />
